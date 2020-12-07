@@ -6,7 +6,7 @@ class ChatModel{
   String time;
   String AvaterUrl;
 
-  ChatModel(this.name, this.message, this.time, this.AvaterUrl);
+  ChatModel(this.name,  this.message, this.time, this.AvaterUrl);
 
   static List<ChatModel> getList(){
     List<ChatModel> myList=new List();
