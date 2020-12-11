@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_up_clone/screen/call_page.dart';
@@ -6,6 +7,9 @@ import 'package:whats_up_clone/screen/chat_page.dart';
 import 'package:whats_up_clone/screen/status_page.dart';
 
 class WhatsAppHome extends StatefulWidget {
+  var cameras;
+  WhatsAppHome(this.cameras);
+
   @override
   _WhatsAppHomeState createState() => _WhatsAppHomeState();
 }
@@ -40,7 +44,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[CameraPage(), ChatPage(), StatusPage(), CallPage()],
+        children: <Widget>[CameraPage(widget.cameras), ChatPage(), StatusPage(), CallPage()],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => print("open chat"),
